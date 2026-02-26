@@ -8,27 +8,13 @@ const dmSerif = DM_Serif_Display({ weight: "400", subsets: ["latin"], variable: 
 
 export const metadata: Metadata = {
   title: 'Evince | Cinematic Property Videos',
-  description: 'Cinematic property videos crafted from your listing photos. Evince the feeling before the first showing.',
-  generator: 'v0.app',
+  description:
+    'Cinematic property videos crafted from your listing photos. Evince the feeling before the first showing.',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
 }
-
 export const viewport: Viewport = {
   themeColor: '#f6f1e8',
 }
