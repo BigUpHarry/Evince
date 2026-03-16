@@ -5,57 +5,52 @@ import { ScrollReveal } from "./scroll-reveal"
 
 export function AgencyPartnershipsSection() {
   return (
-    <section className="py-20 md:py-28 px-6">
-      <div className="max-w-4xl mx-auto">
-        <ScrollReveal className="text-center mb-12">
-          <p className="text-sm uppercase tracking-[0.2em] text-primary font-semibold mb-4">
-            Agency Partnerships
+    <section className="py-32 md:py-48 px-6 bg-foreground text-background">
+      <div className="max-w-5xl mx-auto text-center">
+        <ScrollReveal>
+          <p className="text-sm uppercase tracking-[0.2em] text-primary font-semibold mb-6">
+            For Agencies
           </p>
-          <h2 className="text-2xl md:text-4xl font-serif text-foreground">
-            For agencies and teams
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.1]">
+            Agency Partnerships
           </h2>
         </ScrollReveal>
+        <ScrollReveal delay={0.2}>
+          <p className="mt-10 text-xl md:text-2xl text-background/80 leading-relaxed max-w-3xl mx-auto">
+            Some agencies choose to integrate Evince across their marketing to create 
+            a consistent cinematic standard across every property they represent.
+          </p>
+          <p className="mt-6 text-lg md:text-xl text-background/70 leading-relaxed max-w-3xl mx-auto">
+            We partner with agencies to design tailored solutions that fit their brand 
+            and listing volume.
+          </p>
+        </ScrollReveal>
 
-        <ScrollReveal delay={0.1}>
-          <div className="bg-primary text-primary-foreground rounded-3xl p-8 md:p-12 shadow-2xl transition-all duration-300 hover:-translate-y-1">
-            <div className="max-w-2xl mx-auto">
-              <p className="text-primary-foreground/90 leading-relaxed text-lg text-center">
-                For agencies or teams looking to elevate their overall brand presence across multiple listings.
-              </p>
+        {/* Partnership Features */}
+        <ScrollReveal delay={0.3}>
+          <div className="mt-16 flex flex-wrap justify-center gap-4 md:gap-6">
+            {["Volume pricing", "Branding integration", "Priority turnaround"].map((feature) => (
+              <span
+                key={feature}
+                className="px-6 py-3 rounded-full border border-background/30 text-background/90 text-sm md:text-base"
+              >
+                {feature}
+              </span>
+            ))}
+          </div>
+        </ScrollReveal>
 
-              <p className="mt-6 text-primary-foreground/90 leading-relaxed text-center">
-                Some agencies choose to integrate Evince across their marketing to create a consistent cinematic standard across every property they represent. Partnerships allow us to work closely with your brand and provide tailored solutions depending on your listing volume and marketing goals.
-              </p>
-
-              <div className="mt-10 pt-8 border-t border-primary-foreground/20">
-                <p className="text-sm text-primary-foreground/70 text-center mb-6">
-                  This may include:
-                </p>
-                <ul className="flex flex-wrap justify-center gap-3">
-                  {[
-                    "Volume pricing",
-                    "Branding integration",
-                    "Priority turnaround",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="text-sm bg-primary-foreground/10 text-primary-foreground px-5 py-2.5 rounded-full font-medium"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-12 text-center">
-                <Link
-                  href="/contact"
-                  className="inline-block px-10 py-4 rounded-xl font-semibold transition-all bg-secondary text-secondary-foreground hover:opacity-90"
-                >
-                  Grow With Us
-                </Link>
-              </div>
-            </div>
+        {/* Button */}
+        <ScrollReveal delay={0.4}>
+          <div className="mt-16">
+            <Link
+              href="/contact"
+              className="inline-block px-12 py-5 rounded-xl font-semibold text-lg transition-all bg-secondary text-secondary-foreground hover:opacity-90"
+            >
+              Grow With Us
+            </Link>
           </div>
         </ScrollReveal>
       </div>
