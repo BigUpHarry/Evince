@@ -22,9 +22,9 @@ export function Header() {
           <a href="#how" className="text-muted-foreground hover:text-primary transition-colors">
             How It Works
           </a>
-          <a href="#pricing" className="text-muted-foreground hover:text-primary transition-colors">
+          <Link href="/pricing" className="text-muted-foreground hover:text-primary transition-colors">
             Pricing
-          </a>
+          </Link>
           <Link
             href="/contact"
             className="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-all px-5 py-2.5 rounded-xl text-sm font-semibold"
@@ -60,13 +60,13 @@ export function Header() {
           >
             How It Works
           </a>
-          <a
-            href="#pricing"
+          <Link
+            href="/pricing"
             onClick={() => setMobileOpen(false)}
             className="text-muted-foreground hover:text-primary transition-colors"
           >
             Pricing
-          </a>
+          </Link>
           <Link
             href="/contact"
             onClick={() => setMobileOpen(false)}
