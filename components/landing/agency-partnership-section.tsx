@@ -12,7 +12,7 @@ export function AgencyPartnershipsSection() {
             For Agencies
           </p>
         </ScrollReveal>
-        <ScrollReveal delay={0.1}>
+        <ScrollReveal>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.1]">
             Agency Partnerships
           </h2>
