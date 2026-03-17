@@ -46,7 +46,7 @@ export function SingleListingSection() {
                 <ul className="space-y-4 mb-10">
                   {[
                     "Cinematic listing film",
-                    "Two social media ready edits included",
+                    "One social media-ready edit included",
                     "Optimised for listing portals and social media",
                   ].map((feature) => (
                     <li key={feature} className="flex items-start gap-3 text-foreground">
