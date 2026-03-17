@@ -33,7 +33,7 @@ export function SocialMediaReady() {
             </h2>
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                Most buyers first discover homes while scrolling on social media, not traditional listing websites. That's why every Evince property film comes with two vertical videos optimised for Instagram Reels, TikTok, and YouTube Shorts, in addition to the main cinematic listing video.
+                Most buyers first discover homes while scrolling on social media, not traditional listing websites. That's why every Evince property film comes with a vertical video optimised for Instagram Reels, TikTok, and YouTube Shorts, in addition to the main cinematic listing video.
 
               </p>
               <p>
