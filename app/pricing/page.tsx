@@ -2,14 +2,14 @@ import { Metadata } from "next"
 import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
 import { PricingHero } from "@/components/landing/pricing-hero"
-import { SingleListingSection } from "@/components/landing/single-listing-section"
+import { PricingIntro } from "@/components/landing/pricing-intro"
 import { AgentPlansSection } from "@/components/landing/agent-plans-section"
 import { AgencyPartnershipsSection } from "@/components/landing/agency-partnerships-section"
 
 export const metadata: Metadata = {
   title: "Pricing | Evince",
   description:
-    "Flexible pricing options for cinematic property videos. Start with a single listing or scale with agent and agency plans.",
+    "Cinematic property videos created from your listing photos. Custom plans for agents and agency partnerships.",
 }
 
 export default function PricingPage() {
@@ -18,7 +18,7 @@ export default function PricingPage() {
       <Header />
       <main>
         <PricingHero />
-        <SingleListingSection />
+        <PricingIntro />
         <AgentPlansSection />
         <AgencyPartnershipsSection />
       </main>
@@ -26,4 +26,3 @@ export default function PricingPage() {
     </div>
   )
 }
-
