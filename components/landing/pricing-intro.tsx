@@ -33,7 +33,7 @@ export function PricingIntro() {
         <ScrollReveal delay={0.2}>
           <div className="grid grid-cols-3 gap-8 md:gap-12">
             <div className="text-center">
-              <p className="text-4xl md:text-5xl font-serif text-foreground">24hr</p>
+              <p className="text-4xl md:text-5xl font-serif text-foreground">30hr</p>
               <p className="mt-3 text-sm md:text-base text-muted-foreground">
                 Average turnaround
               </p>
