@@ -9,5 +9,8 @@
 .env
 .env*.local
 
+# typescript
+*.tsbuildinfo
+
 # misc
 .DS_Store
