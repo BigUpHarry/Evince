@@ -18,7 +18,7 @@ export function Footer() {
           </p>
           <div className="mt-8">
             <Link
-              href="/contact"
+              href="/request-a-job"
               className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-all px-8 py-4 rounded-2xl text-lg font-semibold"
             >
               <Mail size={20} />

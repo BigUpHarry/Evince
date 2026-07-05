@@ -66,7 +66,7 @@ export function AgentPlansSection() {
             <ScrollReveal delay={0.3} direction="right">
               <div className="mt-10">
                 <Link
-                  href="/contact"
+                  href="/request-a-job"
                   className="inline-block px-10 py-4 rounded-xl font-semibold transition-all bg-primary text-primary-foreground hover:opacity-90"
                 >
                   Customise Your Plan

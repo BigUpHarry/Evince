@@ -46,7 +46,7 @@ export function AgencyPartnershipsSection() {
         <ScrollReveal delay={0.4}>
           <div className="mt-16">
             <Link
-              href="/contact"
+              href="/request-a-job"
               className="inline-block px-12 py-5 rounded-xl font-semibold text-lg transition-all bg-secondary text-secondary-foreground hover:opacity-90"
             >
               Grow With Us
