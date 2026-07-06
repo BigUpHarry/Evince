@@ -25,6 +25,9 @@ export function Header() {
           <Link href="/pricing" className="text-muted-foreground hover:text-primary transition-colors">
             Pricing
           </Link>
+          <Link href="/request-a-job" className="text-muted-foreground hover:text-primary transition-colors">
+            Request a Job
+          </Link>
           <Link
             href="/request-a-job"
             className="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-all px-5 py-2.5 rounded-xl text-sm font-semibold"
@@ -66,6 +69,13 @@ export function Header() {
             className="text-muted-foreground hover:text-primary transition-colors"
           >
             Pricing
+          </Link>
+          <Link
+            href="/request-a-job"
+            onClick={() => setMobileOpen(false)}
+            className="text-muted-foreground hover:text-primary transition-colors"
+          >
+            Request a Job
           </Link>
           <Link
             href="/request-a-job"
