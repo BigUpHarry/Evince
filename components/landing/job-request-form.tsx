@@ -31,7 +31,7 @@ import {
   TIMELINE_OPTIONS,
   type JobRequestValues,
 } from "@/lib/job-request-schema"
-import { submitJobRequest } from "@/app/request-a-job/actions"
+import { submitJobRequest } from "@/lib/job-request-submit"
 
 type SubmitStatus = "idle" | "submitting" | "success" | "error"
 

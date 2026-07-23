@@ -1,5 +1,3 @@
-"use server"
-
 import {
   jobRequestSchema,
   LISTING_TYPE_OPTIONS,
@@ -8,6 +6,8 @@ import {
   type JobRequestValues,
 } from "@/lib/job-request-schema"
 
+// Web3Forms rejects server-side calls on the free plan ("Use our API in client
+// side"), so this runs in the browser. The access key is public by design.
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit"
 const GENERIC_ERROR =
   "We couldn't send your request right now. Please email us directly instead."
@@ -35,21 +35,23 @@ export async function submitJobRequest(
   const data = parsed.data
 
   if (data.botcheck) {
-    console.log("Job request submission blocked by honeypot")
     return { success: true }
   }
 
-  const accessKey = process.env.WEB3FORMS_ACCESS_KEY
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
 
   if (!accessKey) {
-    console.error("WEB3FORMS_ACCESS_KEY is not configured")
+    console.error("NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY is not configured")
     return { success: false, error: GENERIC_ERROR }
   }
 
   try {
     const response = await fetch(WEB3FORMS_ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
       body: JSON.stringify({
         access_key: accessKey,
         subject: "New Job Request — Evince",

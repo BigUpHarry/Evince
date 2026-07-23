@@ -14,9 +14,20 @@ Evince currently has no functional way for a prospective client to submit a proj
 
 - **Route:** `app/request-a-job/page.tsx` — Server Component page shell (metadata + `Header`/`Footer`, matching the pattern in `app/pricing/page.tsx`).
 - **Form component:** `components/landing/job-request-form.tsx` — Client Component (`"use client"`). Uses the existing shadcn `Form` primitives (`components/ui/form.tsx`, `input.tsx`, `textarea.tsx`, `select.tsx`, `button.tsx`) with `react-hook-form` + `@hookform/resolvers/zod`, all already in `package.json` — no new dependencies.
-- **Shared schema:** `lib/job-request-schema.ts` exports a single zod schema used by both the client resolver and the Server Action, so validation rules aren't duplicated/drifted.
-- **Server Action:** `app/request-a-job/actions.ts` (`"use server"`) — re-validates against the shared schema, applies the honeypot check, then forwards the payload to `https://api.web3forms.com/submit`.
-- **Env var:** `WEB3FORMS_ACCESS_KEY` in `.env.local` (server-only, **not** `NEXT_PUBLIC_`, so it never ships to the browser bundle). User already has an access key from an existing Web3Forms account.
+- **Shared schema:** `lib/job-request-schema.ts` exports a single zod schema used by both the client resolver and the submit helper, so validation rules aren't duplicated/drifted.
+- **Submit helper:** `lib/job-request-submit.ts` — runs in the browser. Re-validates against the shared schema, applies the honeypot check, then forwards the payload to `https://api.web3forms.com/submit`.
+- **Env var:** `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` in `.env.local`. Public by design — Web3Forms access keys are intended to be embedded client-side and grant nothing beyond form submission.
+
+> **Amended 2026-07-23.** This section originally specified a Server Action at
+> `app/request-a-job/actions.ts` (`"use server"`) with a server-only
+> `WEB3FORMS_ACCESS_KEY`. That could never work: Web3Forms rejects server-side
+> calls on the free plan — `"This method is not allowed. Use our API in client
+> side or contact support with server IP address (Pro plan is required)"` —
+> and the rejection arrived as a Cloudflare HTML challenge page, which surfaced
+> in logs as `Unexpected token '<' ... is not valid JSON`. The Server Action was
+> deleted and submission moved to the browser, which is the vendor's intended
+> usage. Alternatives (Web3Forms Pro with a whitelisted static server IP, or
+> switching to a server-side sender such as Resend) were considered and declined.
 - **Nav/CTA rewiring:** every existing CTA that currently points to `/contact` for a project inquiry is repointed to `/request-a-job`:
   - `components/landing/header.tsx` — "Get In Touch" (desktop + mobile)
   - `components/landing/footer.tsx` — CTA band "Get In Touch"
