@@ -8,7 +8,7 @@ const projects = [
     id: 1,
     title: "Modern Family Residence",
     location: "Mount Maunganui",
-    vimeoId: "1167590478",
+    vimeoId: "1211906415",
   },
   {
     id: 2,
